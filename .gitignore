@@ -1,0 +1,38 @@
+# Node dependencies
+node_modules/
+
+# Build and output folders
+.next/
+out/
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# OS metadata
+*.swp
+
+# Coverage
+coverage/
+
+# Temporary files
+*.tmp
