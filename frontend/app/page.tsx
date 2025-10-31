@@ -2,9 +2,17 @@
 
 import dynamic from "next/dynamic";
 import { Typography } from "@mui/material";
-import { SignedIn, SignedOut, RedirectToSignIn, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn,
+  UserButton,
+} from "@clerk/nextjs";
 
-const LeaveCounter = dynamic(() => import("./components/leave/LeaveCounter"), { ssr: false });
+// Dynamically import the LeaveCounter component (client-side only)
+const LeaveCounter = dynamic(() => import("./components/leave/LeaveCounter"), {
+  ssr: false,
+});
 
 export default function Page() {
   return (
