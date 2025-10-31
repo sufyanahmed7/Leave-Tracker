@@ -27,7 +27,7 @@ export default function Page() {
           >
             Pixako Leaves
           </Typography>
-          <UserButton afterSignOutUrl="/sign-in" />
+          <UserButton afterSignOutUrl="/signin" />
         </div>
         <LeaveCounter />
       </SignedIn>
