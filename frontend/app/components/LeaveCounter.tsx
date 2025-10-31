@@ -194,7 +194,7 @@ export default function LeaveCounter() {
           color: "transparent",
         }}
       >
-        Pixako Leaves
+        Leaves Tracker
       </Typography>
 
       {/* user selector */}
