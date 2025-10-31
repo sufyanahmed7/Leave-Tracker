@@ -10,7 +10,7 @@ import {
 } from "@clerk/nextjs";
 
 // Dynamically import the LeaveCounter component (client-side only)
-const LeaveCounter = dynamic(() => import("./components/ui/LeaveCounter"), {
+const LeaveCounter = dynamic(() => import("./components/leave/LeaveCounter"), {
   ssr: false,
 });
 
