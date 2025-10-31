@@ -41,7 +41,7 @@ export default function LeaveCounter() {
 
       <Grid container spacing={3} justifyContent="center">
         {leaveTypes.map((type) => (
-          <Grid item xs={12} sm={6} md={4} key={type}>
+          <Grid size={{xs:12,sm:6,md:4}} key={type}>
             <LeaveTypeCard
               type={type}
               data={leaves[type]}
