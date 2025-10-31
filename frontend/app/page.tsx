@@ -7,7 +7,7 @@ import { SignedIn, SignedOut, RedirectToSignIn, UserButton } from "@clerk/nextjs
 const LeaveCounter = dynamic(() => import("./components/LeaveCounter"), { ssr: false });
 
 export default function Page() {
-  return (
+  return (git
     <div>
       <SignedOut>
         <RedirectToSignIn />

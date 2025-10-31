@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
+import ServiceWorkerRegister from "./components/features/pwa/ServiceWorkerRegister";
 
 const poppins = Open_Sans({
   weight: '700',
