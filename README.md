@@ -1,9 +1,7 @@
-# 🏝️ Leave-Tracker – Pixako Leave Counter
+# Leave-Tracker – Pixako Leave Counter
 
 A modern web app that helps Pixako employees track and manage their leave records.  
 Built with **Next.js**, **TypeScript**, **TailwindCSS**, **Material UI**, and **Clerk Authentication**.
-
----
 
 ## 🚀 Features
 
@@ -12,8 +10,6 @@ Built with **Next.js**, **TypeScript**, **TailwindCSS**, **Material UI**, and **
 - 🧠 **Smart counters** – casual, medical, and annual leave progress  
 - 💾 **MongoDB + Express API** – connected backend for leave data  
 - 🎨 **Responsive UI** – built using TailwindCSS & MUI components  
-
----
 
 ## 🧱 Tech Stack
 
@@ -24,8 +20,6 @@ Built with **Next.js**, **TypeScript**, **TailwindCSS**, **Material UI**, and **
 | Auth | Clerk |
 | Backend | Express + MongoDB |
 | Hosting | Vercel / Render / MongoDB Atlas |
-
----
 
 ## ⚙️ Getting Started
 
@@ -54,3 +48,37 @@ CLERK_SECRET_KEY=your_clerk_secret_key
 npm run dev
 Visit http://localhost:3000
 ```
+
+### 🧑‍💼 Folder Structure
+```bash
+/backend
+  └── src/
+      ├── models/Leave.js
+      ├── routes/leaves.js
+/frontend
+  ├── app/
+  ├── components/
+  └── LeaveCounter.tsx
+```
+
+### 🧑‍💻 Contributors
+
+| Name       | Role              |
+| ---------- | ----------------- |
+| **Ammar**  | Software Engineer |
+| **Sufyan** | Software Engineer |
+| **Haris**  | Software Engineer |
+
+### 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+### 💡 Future Improvements
+
+- Add leave approval flow for managers
+- Integrate calendar-based leave planning
+- Mobile-first dashboard
+
+---
