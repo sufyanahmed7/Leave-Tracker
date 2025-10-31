@@ -80,27 +80,38 @@ export default function LeaveCounter() {
       const res = await fetch(
         `${API_BASE}/api/leaves/${encodeURIComponent(userId)}`
       );
+
+      if (!res.ok) {
+        throw new Error(`HTTP error ${res.status}`);
+      }
+
       const data: LeaveDoc = await res.json();
+
+      if (!data || !data.history) {
+        console.error("Invalid data returned from API:", data);
+        return;
+      }
+
       setDoc(data);
       setLeaves({
         casual: {
-          used: data.casual,
+          used: data.casual || 0,
           total: LIMITS.casual,
           history: data.history.filter((h) => h.type === "casual"),
         },
         medical: {
-          used: data.medical,
+          used: data.medical || 0,
           total: LIMITS.medical,
           history: data.history.filter((h) => h.type === "medical"),
         },
         annual: {
-          used: data.annual,
+          used: data.annual || 0,
           total: LIMITS.annual,
           history: data.history.filter((h) => h.type === "annual"),
         },
       });
     } catch (err) {
-      console.error("fetchForUser failed", err);
+      console.error("fetchForUser failed:", err);
     } finally {
       setLoading(false);
     }
