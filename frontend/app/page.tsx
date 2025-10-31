@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const LeaveCounter = dynamic(() => import("./components/LeaveCounter"), {
+const LeaveCounter = dynamic(() => import("./components/ui/LeaveCounter"), {
   ssr: false,
 });
 
