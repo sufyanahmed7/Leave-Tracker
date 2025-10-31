@@ -7,7 +7,7 @@ export const LEAVE_LIMITS: Record<LeaveType, number> = {
   annual: 14,
 };
 
-export const TOTAL_LEAVE_COUNT = 24;
+export const TOTAL_LEAVE_COUNT = 26;
 
 export const LEAVE_COLORS: Record<LeaveType, string> = {
   casual: "#42a5f5",

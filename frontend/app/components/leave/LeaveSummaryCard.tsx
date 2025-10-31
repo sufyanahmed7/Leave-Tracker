@@ -24,7 +24,7 @@ export const LeaveSummaryCard: React.FC<LeaveSummaryCardProps> = ({
         maxWidth: 520,
         mx: "auto",
         mb: 4,
-        p: 2,
+        p: 3,
         textAlign: "center",
         boxShadow: 8,
         borderRadius: 2,
