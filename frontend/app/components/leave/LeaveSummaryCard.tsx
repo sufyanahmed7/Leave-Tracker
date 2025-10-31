@@ -18,6 +18,8 @@ export const LeaveSummaryCard: React.FC<LeaveSummaryCardProps> = ({
   const totalRemaining = TOTAL_LEAVE_COUNT - totalUsed;
   const progressValue = (totalUsed / TOTAL_LEAVE_COUNT) * 100;
 
+  const isAllLeavesPresent = totalUsed === 0;
+
   return (
     <Card
       sx={{
@@ -46,6 +48,7 @@ export const LeaveSummaryCard: React.FC<LeaveSummaryCardProps> = ({
           variant="outlined"
           startIcon={<RotateCcw size={18} />}
           onClick={onResetClick}
+          disabled={isAllLeavesPresent} 
         >
           Reset Counts
         </Button>
