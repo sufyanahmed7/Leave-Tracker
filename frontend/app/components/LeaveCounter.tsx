@@ -245,7 +245,7 @@ export default function LeaveCounter() {
           const data = leaves[type];
           const pct = (data.used / data.total) * 100;
           return (
-            <Grid item xs={12} sm={6} md={4} key={type}>
+            <Grid size={{xs:12, sm:6, md:4}} key={type}>
               <Card sx={{ borderRadius: 4, p: 2, minHeight: 220, boxShadow: 5, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <CardContent>
                   <Typography variant="h6" fontWeight={600} sx={{ color: colors[type], mb: 1 }}>
