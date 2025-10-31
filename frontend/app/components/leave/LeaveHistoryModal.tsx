@@ -37,12 +37,15 @@ export const LeaveHistoryModal: React.FC<LeaveHistoryModalProps> = ({
         sx={{
           width: "90%",
           maxWidth: 520,
+          height: '80%',
           mx: "auto",
-          mt: 8,
-          p: 3,
+          mt: 12,
+          py: 3,
+          px: 2,
           borderRadius: 3,
           background: "white",
           boxShadow: 8,
+          overflowY: 'auto',
         }}
       >
         <Box
@@ -50,6 +53,13 @@ export const LeaveHistoryModal: React.FC<LeaveHistoryModalProps> = ({
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            position: "sticky",
+            top: -24, 
+            zIndex: 10, 
+            backgroundColor: "white",
+            borderBottom: "1px solid lightgray", 
+            py:1,
+            px: 1.5
           }}
         >
           <Typography variant="h6" fontWeight={700}>
@@ -59,7 +69,7 @@ export const LeaveHistoryModal: React.FC<LeaveHistoryModalProps> = ({
             <X size={20} />
           </IconButton>
         </Box>
-        <Divider sx={{ my: 2 }} />
+
         <List>
           {history.length === 0 ? (
             <Typography color="text.secondary">No records yet.</Typography>
