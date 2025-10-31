@@ -210,7 +210,7 @@ export default function LeaveCounter() {
   const totalRemaining = TOTAL_LEAVE_COUNT - totalUsed;
 
   return (
-    <Box sx={{ p: 3, maxWidth: 1100, mx: "auto" }}>
+    <Box sx={{ py: 7, px: 3, maxWidth: 1100, mx: "auto" }}>
       {/* Summary card */}
       <Card
         sx={{
@@ -219,7 +219,8 @@ export default function LeaveCounter() {
           mb: 4,
           p: 2,
           textAlign: "center",
-          boxShadow: 6,
+          boxShadow: 8,
+          borderRadius: 2,
         }}
       >
         <Typography variant="h6" fontWeight={700}>

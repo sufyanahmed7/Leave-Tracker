@@ -14,7 +14,7 @@ export default function Page() {
       </SignedOut>
 
       <SignedIn>
-        <div className="flex justify-between p-4">
+        <div className="flex justify-between p-3 w-full bg-emerald-100/50 backdrop-blur-md z-50 border-b-gray-50 shadow-md">
           <Typography
             variant="h4"
             sx={{
@@ -25,7 +25,7 @@ export default function Page() {
               color: "transparent",
             }}
           >
-            Pixako Leaves
+            LeaveTry
           </Typography>
           <UserButton afterSignOutUrl="/signin" />
         </div>

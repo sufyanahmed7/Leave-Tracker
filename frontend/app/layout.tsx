@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const poppins = Open_Sans({
+  weight: '700',
+  subsets: ['latin'],
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const roboto = Roboto({
+  weight: '700',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Pixako Leaves",
@@ -26,7 +26,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           suppressHydrationWarning
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${poppins} ${roboto}  font-sans antialiased`}
         >
           {children}
         </body>
