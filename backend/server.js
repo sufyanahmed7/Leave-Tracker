@@ -8,7 +8,13 @@ import leaveRoutes from "./src/routes/leaveRoutes.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://leave-tracker-beta.vercel.app"],
+    credentials: true, 
+  })
+);
+
 app.use(express.json());
 
 await connectDB(); // or call connectDB() depending on your implementation
