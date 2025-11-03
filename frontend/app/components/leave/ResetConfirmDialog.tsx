@@ -32,10 +32,10 @@ export const ResetConfirmDialog: React.FC<ResetConfirmDialogProps> = ({
         </DialogContentText>
       </DialogContent>
       <DialogActions>
+        <Button onClick={onClose}>Cancel</Button>
         <Button color="error" variant="contained" onClick={onConfirm}>
           Reset
         </Button>
-        <Button onClick={onClose}>Cancel</Button>
       </DialogActions>
     </Dialog>
   );
