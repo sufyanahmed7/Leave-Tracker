@@ -1,4 +1,4 @@
-# Leave-Tracker – Pixako Leave Counter
+# Leave-Tracker –Leave Counter
 
 A modern web app that helps Pixako employees track and manage their leave records.  
 Built with **Next.js**, **TypeScript**, **TailwindCSS**, **Material UI**, and **Clerk Authentication**.
