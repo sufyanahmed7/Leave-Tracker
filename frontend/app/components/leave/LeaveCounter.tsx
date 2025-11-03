@@ -3,28 +3,34 @@
 // LeaveCounter.tsx - Main component
 import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useLeaveManager } from "../../lib/hooks/useLeaveManager";
 import { LeaveSummaryCard } from "./LeaveSummaryCard";
 import { LeaveTypeCard } from "./LeaveTypeCard";
 import { LeaveHistoryModal } from "./LeaveHistoryModal";
 import { ResetConfirmDialog } from "./ResetConfirmDialog";
 import { calculateTotalUsed } from "../../lib/utils/leave.utils";
-import { LeaveType } from "../../lib/types/leave.types";
+import { LeaveType, LeaveData } from "../../lib/types/leave.types";
 
 export default function LeaveCounter() {
   const { user } = useUser();
-  const { doc, leaves, loading, takeLeave, resetCounts } = useLeaveManager(
-    user?.id
-  );
+  const { doc, leaves, takeLeave, resetCounts } = useLeaveManager(user?.id);
   const [openModal, setOpenModal] = useState<LeaveType | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
 
-  if (loading || !leaves || !doc) {
-    return <Typography>Loading...</Typography>;
-  }
+  const defaultLeaveData: LeaveData = {
+    used: 0,
+    total: 0,
+    history: [],
+  };
 
-  const totalUsed = calculateTotalUsed(leaves);
+  const safeLeaves: Record<LeaveType, LeaveData> = leaves ?? {
+    casual: { ...defaultLeaveData },
+    medical: { ...defaultLeaveData },
+    annual: { ...defaultLeaveData },
+  };
+
+  const totalUsed = calculateTotalUsed(safeLeaves);
   const leaveTypes: LeaveType[] = ["casual", "medical", "annual"];
 
   const handleResetConfirm = async () => {
@@ -41,10 +47,10 @@ export default function LeaveCounter() {
 
       <Grid container spacing={3} justifyContent="center">
         {leaveTypes.map((type) => (
-          <Grid size={{xs:12,sm:6,md:4}} key={type}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={type}>
             <LeaveTypeCard
               type={type}
-              data={leaves[type]}
+              data={safeLeaves[type]}
               onTakeLeave={takeLeave}
               onShowHistory={setOpenModal}
             />
@@ -55,7 +61,7 @@ export default function LeaveCounter() {
       <LeaveHistoryModal
         open={!!openModal}
         leaveType={openModal}
-        history={openModal ? leaves[openModal].history : []}
+        history={openModal ? safeLeaves[openModal].history : []}
         onClose={() => setOpenModal(null)}
       />
 

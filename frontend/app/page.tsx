@@ -8,19 +8,22 @@ import {
   RedirectToSignIn,
   UserButton,
 } from "@clerk/nextjs";
+import Loading from "./components/leave/loading";
 
-// Dynamically import the LeaveCounter component (client-side only)
 const LeaveCounter = dynamic(() => import("./components/leave/LeaveCounter"), {
   ssr: false,
+  loading: () => <Loading />,
 });
 
 export default function Page() {
   return (
     <div>
+      {/* Redirect if signed out */}
       <SignedOut>
         <RedirectToSignIn />
       </SignedOut>
 
+      {/* Signed in view */}
       <SignedIn>
         <div className="flex justify-between p-3 w-full bg-emerald-100/50 backdrop-blur-md z-50 border-b-gray-50 shadow-md">
           <Typography
@@ -37,6 +40,7 @@ export default function Page() {
           </Typography>
           <UserButton afterSignOutUrl="/signin" />
         </div>
+
         <LeaveCounter />
       </SignedIn>
     </div>
