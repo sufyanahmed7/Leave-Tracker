@@ -18,6 +18,7 @@ const app = express();
       if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
       }
+      
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Add any custom headers your frontend sends
       res.setHeader('Access-Control-Allow-Credentials', 'true'); // If you are sending cookies or authorization headers
